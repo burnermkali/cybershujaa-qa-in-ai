@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cybersecurity-themed Design System for QA Mentor Hour */
+
+@layer base {
+  :root {
+    /* Light Mode - Clean & Professional */
+    --background: 210 20% 98%;
+    --foreground: 210 40% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 10%;
+
+    /* Primary: Cyber Blue */
+    --primary: 211 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Slate */
+    --secondary: 210 20% 93%;
+    --secondary-foreground: 210 40% 10%;
+
+    /* Muted */
+    --muted: 210 20% 93%;
+    --muted-foreground: 210 15% 45%;
+
+    /* Accent: Cyber Green */
+    --accent: 145 63% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 211 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom Colors */
+    --cyber-blue: 211 100% 50%;
+    --cyber-blue-glow: 211 100% 60%;
+    --cyber-green: 145 63% 42%;
+    --cyber-green-glow: 145 63% 52%;
+    --cyber-purple: 270 70% 55%;
+    --cyber-orange: 25 95% 53%;
+    --terminal-bg: 220 20% 12%;
+    --terminal-text: 145 63% 55%;
+
+    /* Gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(211 100% 50%) 0%, hsl(145 63% 42%) 100%);
+    --gradient-shield: linear-gradient(180deg, hsl(211 100% 55%) 0%, hsl(211 100% 40%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(145 63% 42%) 0%, hsl(145 63% 55%) 100%);
+
+    /* Shadows */
+    --shadow-glow-blue: 0 0 20px hsl(211 100% 50% / 0.3);
+    --shadow-glow-green: 0 0 20px hsl(145 63% 42% / 0.3);
+    --shadow-card: 0 4px 20px hsl(210 40% 10% / 0.08);
+
+    --sidebar-background: 210 20% 96%;
+    --sidebar-foreground: 210 40% 10%;
+    --sidebar-primary: 211 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 90%;
+    --sidebar-accent-foreground: 210 40% 10%;
+    --sidebar-border: 210 20% 88%;
+    --sidebar-ring: 211 100% 50%;
+  }
+
+  .dark {
+    /* Dark Mode - Cyber Ops Theme */
+    --background: 220 25% 8%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 25% 12%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 25% 12%;
+    --popover-foreground: 210 20% 95%;
+
+    /* Primary: Bright Cyber Blue */
+    --primary: 211 100% 55%;
+    --primary-foreground: 220 25% 8%;
+
+    /* Secondary */
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 210 20% 95%;
+
+    /* Muted */
+    --muted: 220 20% 18%;
+    --muted-foreground: 210 15% 60%;
+
+    /* Accent: Bright Cyber Green */
+    --accent: 145 63% 50%;
+    --accent-foreground: 220 25% 8%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 211 100% 55%;
+
+    /* Custom Dark Mode Colors */
+    --cyber-blue: 211 100% 55%;
+    --cyber-blue-glow: 211 100% 65%;
+    --cyber-green: 145 63% 50%;
+    --cyber-green-glow: 145 63% 60%;
+    --terminal-bg: 220 25% 6%;
+    --terminal-text: 145 63% 60%;
+
+    /* Shadows */
+    --shadow-glow-blue: 0 0 30px hsl(211 100% 55% / 0.4);
+    --shadow-glow-green: 0 0 30px hsl(145 63% 50% / 0.4);
+    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.3);
+
+    --sidebar-background: 220 25% 10%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 211 100% 55%;
+    --sidebar-primary-foreground: 220 25% 8%;
+    --sidebar-accent: 220 20% 16%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 220 20% 18%;
+    --sidebar-ring: 211 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Cyber Glow Effects */
+  .glow-blue {
+    box-shadow: var(--shadow-glow-blue);
+  }
+
+  .glow-green {
+    box-shadow: var(--shadow-glow-green);
+  }
+
+  .glow-text-blue {
+    text-shadow: 0 0 10px hsl(var(--cyber-blue) / 0.5);
+  }
+
+  .glow-text-green {
+    text-shadow: 0 0 10px hsl(var(--cyber-green) / 0.5);
+  }
+
+  /* Terminal Style */
+  .terminal {
+    @apply bg-terminal rounded-lg p-4 font-mono text-sm;
+    color: hsl(var(--terminal-text));
+    background: hsl(var(--terminal-bg));
+  }
+
+  .terminal::before {
+    content: '$ ';
+    color: hsl(var(--cyber-green));
+  }
+
+  /* Progress Bar Animation */
+  .progress-animate {
+    animation: progress-fill 1.5s ease-out forwards;
+  }
+
+  @keyframes progress-fill {
+    from { width: 0%; }
+    to { width: var(--progress-value, 100%); }
+  }
+
+  /* Cyber Grid Background */
+  .cyber-grid {
+    background-image: 
+      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Shield Icon Pulse */
+  .shield-pulse {
+    animation: shield-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes shield-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+  }
+
+  /* Typing Animation */
+  .typing {
+    overflow: hidden;
+    border-right: 2px solid hsl(var(--cyber-green));
+    white-space: nowrap;
+    animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: hsl(var(--cyber-green)); }
+  }
+
+  /* Scan Line Effect */
+  .scan-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(var(--cyber-blue)), transparent);
+    animation: scan 3s linear infinite;
+  }
+
+  @keyframes scan {
+    0% { top: 0; }
+    100% { top: 100%; }
+  }
+}
+
+@layer utilities {
+  .bg-terminal {
+    background: hsl(var(--terminal-bg));
+  }
+
+  .text-terminal {
+    color: hsl(var(--terminal-text));
+  }
+
+  .bg-cyber-gradient {
+    background: var(--gradient-cyber);
+  }
+
+  .bg-shield-gradient {
+    background: var(--gradient-shield);
+  }
+
+  .border-cyber-blue {
+    border-color: hsl(var(--cyber-blue));
+  }
+
+  .border-cyber-green {
+    border-color: hsl(var(--cyber-green));
+  }
+
+  .text-cyber-blue {
+    color: hsl(var(--cyber-blue));
+  }
+
+  .text-cyber-green {
+    color: hsl(var(--cyber-green));
+  }
+}
