@@ -1,73 +1,97 @@
-# Welcome to your Lovable project
+# AI in Quality Assurance — CyberShujaa Mentorship 2026
 
-## Project info
+**Presenter:** Thomas Adika — QA Engineer, Serianu Ltd  
+**Session:** Thursday, 11th June 2026 | 7:00 PM – 8:00 PM EAT  
+**Platform:** Online — CyberShujaa Job Hunting & Mentorship Programme
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## About This Repo
 
-There are several ways of editing your application.
+This is the live presentation app built and demoed during the CyberShujaa mentorship session on **AI in Quality Assurance**. The entire app was built using AI (Vite + React + TypeScript + Tailwind CSS + shadcn/ui), and includes a live Playwright + Claude Code demo showing how AI can write, run, and report automated test suites in real time.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Slides / Session Content
 
-Changes made via Lovable will be committed automatically to this repo.
+| # | Slide | Topic |
+|---|-------|-------|
+| 1 | Introduction | Who Thomas is, what we're building tonight |
+| 2 | Agenda | What we'll cover |
+| 3 | What is QA? | The apartment block analogy — QA for everyone |
+| 4 | AI in QA | Before vs After AI — 4 concrete shifts |
+| 5 | Tools | Playwright + Claude Code + MCP + Jira |
+| 6 | Prompt Building Blocks | 6-block framework: Task, Role, Boundaries, Context, Requirements, Reasoning |
+| 7 | Playwright Prompts | A production-grade QA prompt — what we run live |
+| 8 | Live Demo | AI navigates the site, writes specs, runs tests, opens the HTML report |
+| 9 | Resources & Thank You | Links, next steps, Q&A |
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Tech Stack
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Vite + React + TypeScript** — frontend framework
+- **Tailwind CSS + shadcn/ui** — styling and components
+- **framer-motion** — slide animations
+- **Playwright** — browser automation and E2E testing
+- **Claude Code + Playwright MCP** — AI writes and runs the tests live
 
-Follow these steps:
+---
+
+## Running the Presentation Locally
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone the repo
+git clone https://github.com/burnermkali/cybershujaa-qa-in-ai.git
+cd cybershujaa-qa-in-ai
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Install dependencies
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the dev server (runs at localhost:8080)
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open [http://localhost:8080](http://localhost:8080) — use the arrow buttons or keyboard arrows to navigate slides.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## Live Demo: AI-Written Playwright Tests
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The demo prompt used during the session tests this app using all 6 prompt building blocks:
 
-## What technologies are used for this project?
+- `data-testid="btn-next"` / `data-testid="btn-previous"` — navigation buttons
+- `data-testid="site-title"` — page title assertion
+- 7 test cases covering navigation, keyboard, mobile overflow, and screenshot-on-failure
 
-This project is built with:
+To run the tests yourself after cloning:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```sh
+npx playwright install --with-deps
+npx playwright test tests/e2e/presentation.spec.ts --reporter=html
+npx playwright show-report
+```
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Key Concepts from the Session
 
-## Can I connect a custom domain to my Lovable project?
+**The 6 Prompt Building Blocks:**
+1. **Task Description** — what action should the AI take?
+2. **Role** — define the AI's persona
+3. **Boundaries** — what NOT to do
+4. **Context** — URL, stack, selectors, environment
+5. **Specific Requirements** — numbered list of exact test criteria
+6. **Reasoning** — why these tests matter (helps AI make better edge-case decisions)
 
-Yes, you can!
+**The core insight:**
+> The AI doesn't replace the QA engineer. It replaces the QA engineer who doesn't use AI.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Resources
+
+- [Playwright Docs](https://playwright.dev)
+- [Claude Code](https://claude.ai/code)
+- [Submit Questions](https://bit.ly/mentorshipquestions2026)
+- [CyberShujaa Programme](https://bit.ly/CyberShujaa-JobHuntingandMentorship)
